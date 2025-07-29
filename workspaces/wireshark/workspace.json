@@ -3,18 +3,16 @@
   "docker_registry": "https://ghcr.io/",
   "image_src": "wireshark.png",
   "run_config": {
-    "security_opt": [
-      "seccomp=unconfined"
-    ],
-    "entrypoint": [
-      "/kasminit"
-    ],
-    "user": 1000,
-    "environment": {
-      "HOME": "/home/kasm-user"
+    "hostname": "kasm"
+  },
+  "exec_config": {
+    "go": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --go --url \"$KASM_URL\"'"
+    },
+    "assign": {
+      "cmd": "bash -c '/dockerstartup/custom_startup.sh --assign --url \"$KASM_URL\"'"
     }
   },
-  "exec_config": {},
   "categories": [
     "Development"
   ],
@@ -32,7 +30,10 @@
     {
       "version": "1.17.x",
       "image": "lscr.io/linuxserver/wireshark:latest",
-      "uncompressed_size_mb": 1260
+      "uncompressed_size_mb": 1260,
+      "available_tags": [
+        "develop"
+      ]
     }
   ]
 }
