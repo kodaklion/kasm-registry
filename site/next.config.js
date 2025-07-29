@@ -7,7 +7,7 @@ const nextConfig = {
     name: 'Haydn\'s Registry',
     description: 'The local for a bunch of Kasm workspaces.',
     icon: '/img/logo.svg',
-    listUrl: 'https://registry.kasmweb.com/',
+    listUrl: 'https://kodaklion.github.io/kasm-registry/',
     contactUrl: 'https://kasmweb.com/support',
   },
   reactStrictMode: true,
